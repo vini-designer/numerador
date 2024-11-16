@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block article %}
+
+<form method="POST" action="/ff" enctype="multipart/form-data"></form>
+    <div id="container_main" style="display:flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+        <div id="container_usuario" style="width: 280px; display: flex; flex-flow: row wrap; justify-content: center; align-items: flex-end; column-gap: 5px; padding-bottom: 10px;">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+            </div>
+            <div style="line-height: 1.05; font-weight: bold;">
+                {{rubrica}}
+            </div>
+        </div>
+        <div id="container_menu" style="width: 300px; display: flex; flex-flow: row wrap; align-items: center; justify-content: center; column-gap: 10px;">
+                <div style="width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; border: solid 1px rgba(0,147,221,0.5);">
+                    <a href="/ff">
+                        <div style="text-align: center;">Ficha Final</div>
+                    </a>
+                </div>
+                <div style="width: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <div style="width: 140px; height: 93px; display: flex; align-items: center; justify-content: center; text-align: center; border: solid 1px rgba(0,147,221,0.5);">
+                            Outro<br>Documento
+                        </div>
+                        <div id="container_sub" style="width: 140px; display: flex; flex-flow: row wrap; align-items: center; justify-content: center;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 70px; height: 47px; border-width: 0 1px 1px 1px; border-style: solid; border-color: rgba(0,147,221,0.5);">
+                                <a href="/fisico">
+                                    <div style="text-align: center;">Físico</div>
+                                </a>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: center; width: 70px; height: 47px; border-width: 0 1px 1px 0; border-style: solid; border-color: rgba(0,147,221,0.5);">            
+                                <a href="/digital">
+                                    <div style="text-align: center;">Digital</div>
+                                </a>
+                            </div> 
+                        </div>                           
+                </div>
+        </div> 
+    </div>
+</form>
+{% endblock %}

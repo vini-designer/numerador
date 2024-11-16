@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block article %}
+
+
+    <div id="container_main" style="display:flex; align-items: center; justify-content: center; width: 100%;">
+        <div id="container_arq" style="width: 280px; display: flex; flex-flow: row wrap; justify-content: center; column-gap: 10px;">
+            <form method="POST" action="/menu" enctype="multipart/form-data">
+                <label style="width: 280px; text-align: center; vertical-align:sub; font-weight: bold; padding-bottom: 5px;" for="rubrica">Seleciona o Usuário</label>
+                <select id="rubrica" name="rubrica" size="5" style="width: 280px; margin-bottom: 10px;">
+                {% for rubrica in lista_usuarios %}
+                    <option value="{{rubrica}}">{{rubrica}}</option>
+                {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary" style="width: 280px;">Seguir</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

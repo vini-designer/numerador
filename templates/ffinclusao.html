@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block article %}
+
+<div id="container_main" style="width: 315px; margin-left: auto; margin-right: auto">
+    <div id="container_arq">
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <div style="padding-bottom: 10px; display:flex; justify-content: center;">
+            {% autoescape off %}
+                {{arquivo}}
+            {% endautoescape %}
+        </div>
+    </form>
+    <form method="POST" action="/numerar/{{arquivo}}" onsubmit="">
+        <div id="container_fls1" style="padding-bottom: 10px; display: grid; grid-template-columns: repeat(8, 35px); justify-content: center; row-gap: 5px; column-gap: 5px;">
+            <!--<div>
+                <input class="fl_input" onkeydown="prox_fls(event)" type="text" maxlength="3" min="1" max="250"/>
+            </div>-->
+        </div>
+    </div>
+        <!-- Botões -->
+        <div style="display: flex; justify-content: center;">
+            {% autoescape off %}
+                {{bt_concluir}}
+            {% endautoescape %}
+        </div>   
+    </form>    
+</div>    
+
+{% endblock %}
+
+{% block bottom %}
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="static/js/ffinclusao.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    let num_pgs = "{{pgs_pdf}}", tipo_doc = "{tipo_doc}}";
+    add_field(num_pgs, tipo_doc);
+});
+</script>
+
+{% endblock %}

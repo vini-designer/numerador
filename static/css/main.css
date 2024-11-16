@@ -1,0 +1,15 @@
+a {
+    color: rgba(0,147,221,1) !important;
+}
+
+.btn-primary {
+    background-color: rgba(0,147,221,1) !important;
+}
+
+.fl_input {
+    width: 35px;
+}
+
+.fl_input::placeholder {
+    text-align: center;
+}
