@@ -48,7 +48,6 @@ def check_extension(arq):
 @app.route('/')
 @app.route('/usuario')
 def usuario_page() -> 'html':
-    #usuarios = db.session.execute(db.select(Usuarios).order_by(Usuarios.rubrica)).scalars()
     sql = text('select rubrica from usuarios order by rubrica')
     usuarios = db.session.execute(sql)
     rubricas = [row[0] for row in usuarios]
@@ -121,7 +120,7 @@ def numerar_pgs(arquivo):
     
     for page in range(len(reader1.pages)): 
         c = canvas.Canvas(arquivo, pagesize=letter) 
-        c.drawString(476, 743, num_pgs[page]) 
+        c.drawString(475, 743, num_pgs[page]) 
         c.save() 
         reader2 = PdfReader(arquivo)
         # Merge the overlay page onto the template page

@@ -19,3 +19,12 @@
 
 
 {% endblock %}
+
+{% block bottom %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("rubrica").focus();
+    document.getElementById("rubrica").options.selectedIndex = 0;
+});
+</script>
+{% endblock %}
